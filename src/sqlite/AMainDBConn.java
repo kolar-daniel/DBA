@@ -8,7 +8,7 @@ public class AMainDBConn {
     /**
      * Connect to a sample database
      */
-    public static void connect() {
+    public static Connection connect() {
         Connection conn = null;
         try {
             // db parameters
@@ -23,21 +23,24 @@ public class AMainDBConn {
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
+        } /*finally {
+             */
+        return conn;
+    }
+    public static void closeConnection(Connection conn) {
+        try {
+            if (conn != null) {
+                conn.close();
             }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
     }
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        AMainDBConn.connect();
-        //System.out.println("Hello");
+        Connection c = AMainDBConn.connect();
+        AMainDBConn.closeConnection(c);
     }
 }
