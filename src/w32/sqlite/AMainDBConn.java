@@ -1,19 +1,23 @@
-package sqlite;
+package w32.sqlite;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+/**
+ * Download correct jar file from https://www.sqlitetutorial.net/sqlite-java/sqlite-jdbc-driver/ and add it to lib
+ * or add maven artefact
+ */
 public class AMainDBConn {
     /**
      * Connect to a sample database
      */
     public static Connection connect() {
+
         Connection conn = null;
         try {
             // db parameters
             // absolute path
-            //String url = "jdbc:sqlite:C:/sqlite/db/chinook.db";
+            //String url = "jdbc:sqlite:C:/w32.sqlite/db/chinook.db";
             //relative path
             String url = "jdbc:sqlite:moje.db";
             // create a connection to the database

@@ -1,4 +1,4 @@
-package sqlite;
+package w32.sqlite;
 
 import java.sql.*;
 

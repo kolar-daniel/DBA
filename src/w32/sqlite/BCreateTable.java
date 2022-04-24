@@ -1,7 +1,6 @@
-package sqlite;
+package w32.sqlite;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class BCreateTable {
@@ -9,8 +8,8 @@ public class BCreateTable {
         Connection c = null;
         Statement stmt = null;
         try {
-            //Class.forName("org.sqlite.JDBC");
-            //c = DriverManager.getConnection("jdbc:sqlite:SqliteJavaDB.db");
+            //Class.forName("org.w32.sqlite.JDBC");
+            //c = DriverManager.getConnection("jdbc:w32.sqlite:SqliteJavaDB.db");
             c = AMainDBConn.connect();
             System.out.println("Database Opened...\n");
             stmt = c.createStatement();
