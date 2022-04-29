@@ -6,7 +6,8 @@ import java.sql.SQLException;
 /**
  * Download correct jar file from https://www.sqlitetutorial.net/sqlite-java/sqlite-jdbc-driver/ and add it to lib
  * or add maven artefact
- */
+ * File -> Project Structure -> libraries ->add X:\stemberk\verejne_zaci\lib
+ * */
 public class AMainDBConn {
     /**
      * Connect to a sample database
