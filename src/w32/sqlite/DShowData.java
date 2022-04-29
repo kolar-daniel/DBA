@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 //run: VMOPtions: --module-path "Y:\stemberk\verejne_zaci\javafx-sdk-17.0.1\lib" --add-modules javafx.controls,javafx.fxml
 //Run -> Edit Configurations -> Alt+V (add VM Options line), Add --module-path /opt/javafx-sdk-17.0.2/lib --add-modules=javafx.controls
 // --module-path "C:\Users\stemb\IdeaProjects\javafx-sdk-17.0.2\lib" --add-modules javafx.controls,javafx.fxml
+// --module-path "X:\stemberk\verejne_zaci\javafx-sdk-17.0.1\lib"
 
 public class DShowData extends Application {
     public static void main(String[] args) {
