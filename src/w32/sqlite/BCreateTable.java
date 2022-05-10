@@ -13,7 +13,7 @@ public class BCreateTable {
             c = AMainDBConn.connect();
             System.out.println("Database Opened...\n");
             stmt = c.createStatement();
-            String sql = "CREATE TABLE warehouse " +
+            String sql = "CREATE TABLE IF NOT EXISTS warehouse " +
                     "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     " name TEXT NOT NULL, " +
                     " capacity INT NOT NULL) ";

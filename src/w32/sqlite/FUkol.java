@@ -4,7 +4,7 @@ package w32.sqlite;
 // hygienických stanic (v2)).
 // K nalezení zde: X:\stemberk\verejne_zaci\osoby.csv
 // do databáze (můžete si vybrat mezi SQLite, či MySQL).
-// Totéž proveďte pro soubor C:\stemberk\verejne_zaci\staty.csv a zobrazte
+// Totéž proveďte pro soubor X:\stemberk\verejne_zaci\staty.csv a zobrazte
 // v TableView, případně v nějakém grafu JavaFX.
 
 import java.io.*;
@@ -21,10 +21,31 @@ public class FUkol {
         int cnt = 0;
         fr = new FileReader("Y:\\stemberk\\verejne_zaci\\osoby.csv");
         BufferedReader br = new BufferedReader(fr);
+        br.readLine(); // prvni radku zahodime;
+
         while((radka = br.readLine()) != null) {
+            String id = "";
+            String datum = "";
+            int vek = 0;
+            String mf = "";
+            String kraj = "";
+            String okres = "";
+            Boolean vZahranici = false;
+            String stat = "";
+            Boolean reportovanoKhs = false;
 
             String[] hodnoty = radka.split(",");
-            System.out.format("%s -- %s %n", hodnoty[0], hodnoty[1]);
+            if(hodnoty.length > 0 ) id = hodnoty[0];
+            if(hodnoty.length > 1 ) datum = hodnoty[1];
+            if(hodnoty.length > 2 ) vek = Integer.parseInt(hodnoty[2]);
+            if(hodnoty.length > 3 ) mf = hodnoty[3];
+            if(hodnoty.length > 4 ) kraj = hodnoty[4];
+            if(hodnoty.length > 5 ) okres = hodnoty[5];
+            if(hodnoty.length > 6 ) vZahranici = Boolean.parseBoolean(hodnoty[6]);
+            if(hodnoty.length > 7 ) stat = hodnoty[5];
+            if(hodnoty.length > 8 ) reportovanoKhs = Boolean.parseBoolean(hodnoty[6]);
+            System.out.format("%s, %s, %d, %s, %s, %s, %b, %s, %b%n",
+                    id, datum, vek, mf, kraj, okres, vZahranici, stat, reportovanoKhs);
             if (cnt++ > 10) break;
         }
     }
