@@ -20,12 +20,19 @@ public class DShowData extends Application {
     @Override
     public void start(Stage stage) {
         // Create a TableView with a list of persons
-        TableView<Warehouse> table = new TableView<>(EWarehouseTableUtil.getWarehouseList());
+        TableView<GCovid> table = new TableView<>(HCovidTableUtils.getWarehouseList());
 
         // Add columns to the TableView
-        table.getColumns().addAll(EWarehouseTableUtil.getIdColumn(),
-                EWarehouseTableUtil.getNameColumn(),
-                EWarehouseTableUtil.getCapacityColumn());
+        table.getColumns().addAll(HCovidTableUtils.getIdColumn(),
+                HCovidTableUtils.getid2Column(),
+                HCovidTableUtils.getDatumColumn(),
+        HCovidTableUtils.getVekColumn(),
+        HCovidTableUtils.getPohlaviColumn(),
+        HCovidTableUtils.getkraj_nuts_kodColumn(),
+                HCovidTableUtils.getokres_lau_kodColumn(),
+                HCovidTableUtils.getnakaza_v_zahraniciColumn(),
+                HCovidTableUtils.getnakaza_zeme_csu_kodColumn(),
+        HCovidTableUtils.getreportovano_khsColumn());
         VBox root = new VBox(table);
         root.setStyle("-fx-padding: 10;" +
                 "-fx-border-style: solid inside;" +
