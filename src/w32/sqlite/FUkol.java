@@ -7,6 +7,8 @@ package w32.sqlite;
 // Totéž proveďte pro soubor X:\stemberk\verejne_zaci\staty.csv a zobrazte
 // v TableView, případně v nějakém grafu JavaFX.
 
+// Vytvořte další TableView, které bude ze stejných dat zobrazovat následující souhrn
+// po dnech: datum, průměrný věk, počet mužů, počet žen, celkový počet
 import java.io.*;
 
 /**
