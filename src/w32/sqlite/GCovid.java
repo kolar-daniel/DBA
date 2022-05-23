@@ -36,9 +36,6 @@ public class GCovid {
         this.nakaza_zeme_csu_kod.set(nakaza_zeme_csu_kod);
         this.reportovano_khs.set(reportovano_khs);
 
-
-
-
         }
 
 

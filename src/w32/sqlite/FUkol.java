@@ -45,17 +45,22 @@ public class FUkol {
             String[] hodnoty = radka.split(",");
             if(hodnoty.length > 0 ) id = hodnoty[0];
             if(hodnoty.length > 1 ) datum = hodnoty[1];
-            if(hodnoty.length > 2 ) vek = Integer.parseInt(hodnoty[2]);
+            try {
+                if (hodnoty.length > 2) vek = Integer.parseInt(hodnoty[2]);
+            }
+            catch (Exception s){
+                System.out.println(s.getMessage());
+            }
             if(hodnoty.length > 3 ) mf = hodnoty[3];
             if(hodnoty.length > 4 ) kraj = hodnoty[4];
             if(hodnoty.length > 5 ) okres = hodnoty[5];
             if(hodnoty.length > 6 ) vZahranici = Boolean.parseBoolean(hodnoty[6]);
             if(hodnoty.length > 7 ) stat = hodnoty[5];
             if(hodnoty.length > 8 ) reportovanoKhs = Boolean.parseBoolean(hodnoty[6]);
-            insert(id, datum, vek, mf, kraj, okres, vZahranici, stat, reportovanoKhs);
             System.out.format("%s, %s, %d, %s, %s, %s, %b, %s, %b%n",
                     id, datum, vek, mf, kraj, okres, vZahranici, stat, reportovanoKhs);
-            if (cnt++ > 10) break;
+            insert(id, datum, vek, mf, kraj, okres, vZahranici, stat, reportovanoKhs);
+            if (cnt++ > 99999) break;
         }
     }// * id,datum,vek,pohlavi,kraj_nuts_kod,okres_lau_kod,nakaza_v_zahranici,nakaza_zeme_csu_kod,reportovano_khs
     public static void createTable() {
