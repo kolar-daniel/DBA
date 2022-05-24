@@ -44,8 +44,8 @@ public class FUkol {
             if(hodnoty.length > 4 ) kraj = hodnoty[4];
             if(hodnoty.length > 5 ) okres = hodnoty[5];
             if(hodnoty.length > 6 ) vZahranici = Boolean.parseBoolean(hodnoty[6]);
-            if(hodnoty.length > 7 ) stat = hodnoty[5];
-            if(hodnoty.length > 8 ) reportovanoKhs = Boolean.parseBoolean(hodnoty[6]);
+            if(hodnoty.length > 7 ) stat = hodnoty[7];
+            if(hodnoty.length > 8 ) reportovanoKhs = Boolean.parseBoolean(hodnoty[8]);
             System.out.format("%s, %s, %d, %s, %s, %s, %b, %s, %b%n",
                     id, datum, vek, mf, kraj, okres, vZahranici, stat, reportovanoKhs);
             if (cnt++ > 10) break;
