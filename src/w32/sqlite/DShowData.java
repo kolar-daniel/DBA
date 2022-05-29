@@ -20,13 +20,28 @@ public class DShowData extends Application {
     @Override
     public void start(Stage stage) {
         // Create a TableView with a list of persons
-        TableView<Warehouse> table = new TableView<>(EWarehouseTableUtil.getWarehouseList());
+        TableView<GCovid> table = new TableView<>(HCovidTableUtils.getWarehouseList());
 
         // Add columns to the TableView
-        table.getColumns().addAll(EWarehouseTableUtil.getIdColumn(),
-                EWarehouseTableUtil.getNameColumn(),
-                EWarehouseTableUtil.getCapacityColumn());
-        VBox root = new VBox(table);
+        table.getColumns().addAll(HCovidTableUtils.getIdColumn(),
+                HCovidTableUtils.getid2Column(),
+                HCovidTableUtils.getDatumColumn(),
+        HCovidTableUtils.getVekColumn(),
+        HCovidTableUtils.getPohlaviColumn(),
+        HCovidTableUtils.getkraj_nuts_kodColumn(),
+                HCovidTableUtils.getokres_lau_kodColumn(),
+                HCovidTableUtils.getnakaza_v_zahraniciColumn(),
+                HCovidTableUtils.getnakaza_zeme_csu_kodColumn(),
+        HCovidTableUtils.getreportovano_khsColumn());
+
+        TableView<GCovid2> table2 = new TableView<>(ICovidTable2.getWarehouse2List());
+
+        table2.getColumns().addAll(ICovidTable2.getcelkovyPocetColumn(),
+                ICovidTable2.getpocetMuzuColumn(),
+                ICovidTable2.getpocetZenColumn(),
+                ICovidTable2.getprumernyVekColumn(),
+                ICovidTable2.getDatumColumn());
+        VBox root = new VBox(table, table2);
         root.setStyle("-fx-padding: 10;" +
                 "-fx-border-style: solid inside;" +
                 "-fx-border-width: 2;" +
@@ -36,7 +51,7 @@ public class DShowData extends Application {
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Simplest TableView");
+        stage.setTitle("Štembus bambus doktorus");
         stage.show();
     }
 }
