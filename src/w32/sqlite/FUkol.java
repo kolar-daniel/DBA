@@ -11,9 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import w32.Warehouse;
-
 import java.io.*;
 import java.sql.*;
+
+// Vytvořte další TableView, které bude ze stejných dat zobrazovat následující souhrn
+// po dnech: datum, průměrný věk, počet mužů, počet žen, celkový počet
 
 /**
  * Struktura tabulky:
@@ -55,8 +57,8 @@ public class FUkol {
             if(hodnoty.length > 4 ) kraj = hodnoty[4];
             if(hodnoty.length > 5 ) okres = hodnoty[5];
             if(hodnoty.length > 6 ) vZahranici = Boolean.parseBoolean(hodnoty[6]);
-            if(hodnoty.length > 7 ) stat = hodnoty[5];
-            if(hodnoty.length > 8 ) reportovanoKhs = Boolean.parseBoolean(hodnoty[6]);
+            if(hodnoty.length > 7 ) stat = hodnoty[7];
+            if(hodnoty.length > 8 ) reportovanoKhs = Boolean.parseBoolean(hodnoty[8]);
             System.out.format("%s, %s, %d, %s, %s, %s, %b, %s, %b%n",
                     id, datum, vek, mf, kraj, okres, vZahranici, stat, reportovanoKhs);
             insert(id, datum, vek, mf, kraj, okres, vZahranici, stat, reportovanoKhs);
