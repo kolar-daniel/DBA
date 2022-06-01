@@ -15,7 +15,7 @@ public class HCovidTableUtils {
     public static ObservableList<GCovid> getWarehouseList() {
         ObservableList<GCovid> ret = FXCollections.<GCovid>observableArrayList();
         Connection c = AMainDBConn.connect();
-        String sql = "SELECT * FROM warehouse;";
+        String sql = "SELECT datum, AVG(vek) as vekovy_prumer, (SELECT COUNT(*) FROM Covid as C2 where pohlavi like 'M' AND C2.datum = C1.datum) as pocet_muzu, (SELECT COUNT(*) FROM Covid as C2 where pohlavi like 'Z' AND C2.datum = C1.datum) as pocet_zen, COUNT(*) as celkovy_pocet FROM Covid as C1 GROUP BY datum";
         try (Statement st = c.createStatement()) {
             ResultSet rs = st.executeQuery(sql);
             int cnt = 0;
